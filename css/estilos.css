@@ -16,8 +16,8 @@
     --grey-darker-color: #c6c6c6;
     --grey-lighter-color: #ececec;
     --black-color: #222;
+    --grey-font: #8b8b8b;
     --body-font: 'Open Sans', sans-serif;
-    /* --heading-font: */
 }
 
 body {
@@ -26,12 +26,6 @@ body {
 
 .fylo {
     background-color: var(--white-goingtogrey-color);
-}
-
-.fylo *,
-.fylo__main *,
-.interesting * {
-    outline: 1px solid #222;
 }
 
 .container {
@@ -56,18 +50,17 @@ body {
     display: block;
 }
 
-.nav__link:first-of-type {
+#nav__icon--user {
     display: none;
 }
 
-.nav__link:nth-of-type(2) {
+/* .nav__link:nth-of-type(2) {
     margin-left: auto;
-}
+} */
 
 .nav__link {
     display: inline-block;
-    margin-left: 3vh;
-    color: --black-color;
+    margin-left: 2.4vh;
     text-decoration: none;
 }
 
@@ -123,10 +116,11 @@ span {
     object-fit: cover;
     display: block;
     margin: auto;
+    max-width: 600px;
 }
 
 .slider {
-    max-width: 700px;
+    max-width: 600px;
     position: relative;
 }
 
@@ -142,7 +136,6 @@ span {
 }
 
 .slider__items {
-    /* display: none; */
     position: relative;
 }
 
@@ -177,7 +170,6 @@ span {
 .slider__caption {
     padding: 4% 0;
     font-weight: 500;
-    /* font-family: var(--body-font); */
 }
 
 .camisetas__title {
@@ -211,17 +203,24 @@ span {
 
 .camisetas__paragraph:nth-of-type(2) {
     width: 43%;
-    color: var(--black-color);
     font-weight: 500;
+    opacity: 100%;
     border-bottom: solid 1px var(--black-color);
+}
+
+.camisetas__paragraph a {
+    color: var(--black-color);
+    text-decoration: none;
 }
 
 .interesting {
     max-width: 600px;
+    margin-bottom: 1em;
 }
 
 .interesting__title {
     font-size: 2rem;
+    margin-bottom: 1em;
 }
 
 .interesting__container {
@@ -229,11 +228,706 @@ span {
     flex-direction: column;
 }
 
-.interesting__pictures {
-    gap: 3rem;
-}
-
 .interesting__img {
     width: 100%;
     object-fit: cover;
+    margin: 0 auto;
+}
+
+.interesting__caption {
+    display: flex;
+    margin-bottom: 1.4em;
+}
+
+.interesting__paragraph {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.interesting__icon {
+    margin-left: auto;
+}
+
+.footer {
+    background-color: var(--grey-lighter-color);
+}
+
+.footer__items {
+    display: grid;
+    gap: 1em;
+}
+
+.footer__logo {
+    display: block;
+    width: 35%;
+    margin-bottom: 2em;
+}
+
+.footer__contact {
+    display: flex;
+    align-items: flex-start;
+    gap: 3%;
+}
+
+.footer__contact--second {
+    margin-bottom: 1em;
+}
+
+.footer__icon {
+    margin-top: 0.3%;
+}
+
+.footer__nav {
+    margin-top: 2.5em;
+    display: grid;
+    gap: 2em;
+}
+
+.footer__link {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.footer__social {
+    margin-top: 2em;
+    /* margin: 0 auto; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__media {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 1px solid var(--black-color);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.footer__media--last {
+    margin-right: 0;
+}
+
+/* PÁGINA CATALOGO */
+
+.clothes__container {
+    padding: 5% 0;
+}
+
+.clothes__title {
+    margin: 3% 0;
+    font-family: var(--body-font);
+    font-weight: 600;
+}
+
+.clothes__paragraph {
+    font-family: var(--body-font);
+    color: var(--grey-font);
+    font-weight: 400;
+}
+
+.filter__content {
+    display: flex;
+    margin: 0 auto;
+}
+
+.filter__btn {
+    margin-left: auto;
+}
+
+
+.filter__container {
+    padding: 2% 0;
+}
+
+#filter {
+    display: flex;
+    width: 15%;
+}
+
+.card__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.card__img {
+    width: 100%;
+    object-fit: cover;
+    max-width: 600px;
+}
+
+.card__title {
+    font-family: var(--body-font);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.card__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.card__paragraph,
+.card__price {
+    font-family: var(--body-font);
+    font-weight: 500;
+}
+
+.card__paragraph {
+    color: var(--grey-font);
+}
+
+.card__price {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card__btn {
+    background-color: var(--green-color);
+    color: var(--white-goingtogrey-color);
+    font-family: var(--body-font);
+    border: var(--green-color) solid 1px;
+    padding: 2% 3%;
+
+}
+
+/* MODAL */
+
+.modal__title {
+    font-weight: 600;
+    font-family: var(--body-font);
+}
+
+#btnCart {
+    margin-left: 15%;
+    cursor: pointer;
+    position: relative;
+}
+
+#cantidad {
+    position: absolute;
+    top: -25%;
+    color: var(--black-color);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 0.1rem 0.6rem;
+    border-radius: 1rem;
+}
+
+#productosCarrito {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.modal__container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modal__img {
+    border-radius: 6%;
+    width: 15%;
+}
+
+.modal__texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6%;
+}
+
+.modal__icon {
+    margin-left: auto;
+    margin-top: 5%;
+}
+
+.modal__paragraph--bold {
+    font-weight: 700;
+}
+
+/* MODAL INFO DE ENVIO */
+
+.delivery__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.delivery__title {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.delivery__subtitle {
+    margin-top: 8%;
+    font-family: var(--body-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#provFiltro,
+#muniFiltro {
+    padding: 9px 8px 9px 8px;
+    outline: none;
+    border-radius: 12px;
+    border: #444 solid 1px;
+    transition: all .5s;
+    /* background: var(--white-color) url("/img/bx-search.svg") no-repeat 9px center; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.delivery__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery__paragraph {
+    margin: 3% 0;
+}
+
+/* BUSCADOR */
+
+#search {
+    width: 73%;
+    margin: 1% auto;
+}
+
+#search-bar {
+    padding: 9px 19px 9px 32px;
+    outline: none;
+    border-radius: 15px;
+    border: #444 solid 1px;
+    transition: all .5s;
+    background: var(--white-color) url("/img/bx-search.svg") no-repeat 9px center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#search-bar:hover {
+    width: 100%;
+}
+
+.searchbar__img {
+    border-radius: 6%;
+    width: 8%;
+}
+
+.search__container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#search__results--container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.searchbar__texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6%;
+}
+
+@media (min-width: 740px) {
+
+    .container {
+        padding: 5% 0;
+    }
+
+    .nav {
+        padding: 3% 0;
+    }
+
+    .nav__logo {
+        width: 16%;
+    }
+
+    .nav__link {
+        margin-left: 1vh;
+    }
+
+    /* .nav__link:nth-of-type(2) {
+        padding-left: auto;
+    } */
+
+    #btnCart {
+        margin-left: auto;
+    }
+
+    .fylo__title {
+        font-size: 6.6rem;
+        grid-area: titulo;
+    }
+
+    .fylo__buttons {
+        grid-area: botones;
+    }
+
+    .fylo__cta {
+        font-size: 1.3rem;
+    }
+
+    .fylo__picture {
+        grid-area: img;
+    }
+
+    .fylo__main {
+        grid-template:
+            "titulo img"4fr
+            /* columnas*/
+            "botones img"3fr / 2fr 2fr;
+        /*filas*/
+    }
+
+    /* Segunda sección */
+
+    .slider__title {
+        grid-area: esenciales;
+        font-size: 2.4rem;
+        margin: 3% 24px;
+    }
+
+    .slider__items {
+        grid-area: items;
+    }
+
+    .slider__left,
+    .slider__right {
+        margin-top: -45%;
+    }
+
+    .slider__left {
+        grid-area: iconoizq;
+    }
+
+    .slider__right {
+        grid-area: iconoder;
+        right: 60px;
+    }
+
+    .slider {
+        display: grid;
+        max-width: 1024px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 2fr;
+        grid-template-areas: "esenciales  . ."
+            ". . items"
+            "iconoizq . items"
+            "iconoder . .";
+    }
+
+    .slider__img {
+        width: 100%;
+    }
+
+    .slider__paragraph {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: var(--body-font);
+    }
+
+    /* Tercera sección */
+
+    .camisetas__title {
+        font-size: 2.4rem;
+    }
+
+    .camisetas_pictures:nth-of-type(1) {
+        display: none;
+    }
+
+    .camisetas_pictures:nth-of-type(2) {
+        grid-area: img2--camisetas;
+    }
+
+    .camisetas_pictures:nth-of-type(3) {
+        grid-area: img3--camisetas;
+    }
+
+    .camisetas__container {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: "img2--camisetas  descripcion--camisetas."
+            "img2--camisetas descripcion--camisetas ."
+            "img2-camisetas descripcion--camisetas img3--camisetas";
+    }
+
+    .camisetas__caption {
+        grid-area: descripcion--camisetas;
+        justify-content: center;
+    }
+
+    .camisetas__paragraph:nth-of-type(1),
+    .camisetas__paragraph:nth-of-type(2) {
+        font-weight: 600;
+    }
+
+    /* Cuarta sección */
+
+    .interesting {
+        max-width: 1024px;
+    }
+
+    .interesting__title {
+        font-size: 2.4rem;
+
+    }
+
+    .interesting__caption {
+        margin-right: auto;
+        gap: 1em;
+        font-size: 1.3rem;
+    }
+
+    .interesting__container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .interesting__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        flex-direction: column;
+        flex-basis: calc(15% - 12px);
+    }
+
+    /* FOOTER*/
+
+    .footer__items {
+        grid-template-columns: max-content 1fr 1fr 1fr 1fr;
+    }
+
+    .footer__logo {
+        width: 250px;
+    }
+
+    .footer__contact--second {
+        margin-bottom: 1em;
+    }
+
+    .footer__icon {
+        margin-top: 0.3%;
+    }
+
+    .footer__nav {
+        margin-top: 0em;
+        display: grid;
+        gap: 2em;
+    }
+
+    .footer__social {
+        margin-top: 0em;
+        /* margin: 0 auto; */
+    }
+
+
+    .footer__media--last {
+        margin-right: 0;
+    }
+
+    /* PÁGINA CATALOGO */
+
+    .clothes__title {
+        font-size: 3rem;
+    }
+
+    .clothes__paragraph {
+        font-size: 2rem;
+    }
+
+    .filter__title {
+        font-family: var(--body-font);
+        font-size: 3rem;
+    }
+
+    #filter {
+        width: 25%;
+    }
+
+    .filter__container {
+        width: 100%;
+    }
+
+    .card__title {
+        font-size: 2.6rem;
+    }
+
+    .card__paragraph {
+        font-size: 1.1rem;
+        margin-left: 0%;
+        margin-right: 10%;
+    }
+
+    .card__price {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .nav__link:first-of-type {
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    #nav__icon--user {
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    .nav__link:nth-of-type(2) {
+        margin-left: 0.5%;
+    }
+
+    .nav__link:nth-of-type(3) {
+        display: none;
+    }
+
+    #btnCart {
+        margin-left: 0;
+    }
+
+    .slider__items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .slider__picture {
+        grid-area: fotos;
+    }
+
+    .slider__caption {
+        grid-area: descripcion;
+    }
+
+    .slider {
+        max-width: 1400px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 2fr;
+    }
+
+    .slider__picture:nth-of-type(2),
+    .slider__picture:nth-of-type(3) {
+        display: unset;
+    }
+
+    .slider__img {
+        width: 95%;
+    }
+
+    .camisetas_pictures:nth-of-type(1) {
+        display: block;
+        grid-area: img--camisetas;
+        width: 100%;
+    }
+
+    .camisetas,
+    .interesting {
+        max-width: 1400px;
+    }
+
+    .camisetas__container {
+        display: grid;
+        grid-template-columns: 9fr 4fr 4fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "img--camisetas img2--camisetas ."
+            "img--camisetas img2--camisetas ."
+            "img--camisetas descripcion--camisetas img3--camisetas";
+        gap: 1em;
+    }
+
+    /* Cuarta sección */
+    .interesting__pictures {
+        transform: rotate(-3deg);
+    }
+
+    .footer__container {
+        margin-top: 3%;
+
+    }
+
+    /* PAGINA CATALOGO */
+
+    .clothes__title {
+        font-size: 2rem;
+    }
+
+    .clothes__paragraph {
+        font-size: 1.5rem;
+        margin-right: 45%;
+    }
+
+    .container {
+        padding: 2% 0;
+    }
+
+    .filter__title {
+        font-size: 1.7rem;
+    }
+
+    #card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card__container {
+        width: 25%;
+    }
+
+    .card__content {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .card__picture {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .card__texts {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .card__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card__title {
+        font-size: 1.4rem;
+    }
+
+    .card__price {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
 }

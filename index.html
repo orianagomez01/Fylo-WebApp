@@ -5,46 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
+  <link
+    href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+    rel="stylesheet"
+  />
     <link rel="stylesheet" href="css/estilos.css" />
     <title>Fylo Indumentaria</title>
+
+
   </head>
   <body>
     <header class="fylo">
       <nav class="nav container">
         <figure class="nav__logo">
-          <img src="img/logo.svg" class="nav__img" alt="Logo" />
+          <a href="/index.html">
+            <img src="/img/logo.svg" class="nav__img" alt="Logo" />
+          </a>
         </figure>
-        <a href="#" class="nav__link">
+        <a href="#" class="nav__link" id="nav__icon--user">
           <img
-            src="img/bx-user.svg"
+            src="/img/bx-user.svg"
             class="nav__icon"
             alt="Icono del usuario"
           />
         </a>
+        <div class="btnCart" id="btnCart">
+          <a
+            href="#"
+            class="nav__link"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <span id="cantidad" class="badge bg-success">0</span>
+            <img
+              src="/img/bx-cart.svg"
+              class="nav__icon"
+              alt="Icono del carrito de compras"
+            />
+          </a>
+        </div>
         <a href="#" class="nav__link">
           <img
-            src="img/bx-cart.svg"
-            class="nav__icon"
-            alt="Icono del carrito de compras"
-          />
-        </a>
-        <a href="#" class="nav__link">
-          <img
-            src="img/bx-search.svg"
+            src="/img/bx-search.svg"
             class="nav__icon"
             alt="Icono de búsqueda"
           />
         </a>
         <a href="#" class="nav__link">
-          <img src="img/bx-menu.svg" class="nav__icon" alt="Icono del menú" />
+          <img src="/img/bx-menu.svg" class="nav__icon" alt="Icono del menú" />
         </a>
       </nav>
       <div class="line"></div>
     </header>
+
     <main class="fylo__main container">
       <h1 class="fylo__title">FYLO <span> X Peanuts</span></h1>
       <div class="fylo__buttons">
-        <button class="fylo__cta">Comprar ahora</button>
+        <button class="fylo__cta"><a href="pages/catalogo.html">Comprar ahora</a></button>
         <button class="fylo__cta">Ver más</button>
       </div>
       <figure class="fylo__picture">
@@ -177,7 +205,10 @@
           <p class="camisetas__paragraph">
             Nuestra mejor selección de la temporada
           </p>
-          <p class="camisetas__paragraph">Comprar ahora</p>
+
+          <p class="camisetas__paragraph">
+            <a href="#" class="camisetas__link">Comprar ahora </a>
+          </p>
         </div>
         <figure class="camisetas_pictures">
           <img
@@ -191,74 +222,163 @@
 
     <section class="interesting container">
       <h4 class="interesting__title">QUIZÁS TE PUEDE INTERESAR</h4>
-
       <div class="interesting__container">
-        <figure class="interesting__pictures">
-          <img
-            src="img/img__promo.webp"
-            class="interesting__img"
-            alt="Modelo visualizando una campera"
-          />
-        </figure>
-        <div class="interesting__caption">
-          <p class="interesting__paragraph">Nuevas colecciones</p>
-          <img
-            src="img/bx-right-arrow-alt.svg"
-            alt="Icono de flecha hacia la derecha"
-          />
+        <div class="interesting__items">
+          <figure class="interesting__pictures">
+            <img
+              src="img/img__promo.webp"
+              class="interesting__img"
+              alt="Modelo visualizando una campera"
+            />
+          </figure>
+          <div class="interesting__caption">
+            <p class="interesting__paragraph">Nuevas colecciones</p>
+            <img
+              src="img/bx-right-arrow-alt.svg"
+              class="interesting__icon"
+              alt="Icono de flecha hacia la derecha"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="interesting__container">
-        <figure class="interesting__pictures">
-          <img
-            src="img/img__promo2.webp"
-            class="interesting__img"
-            alt="Modelo visualizando una campera con un conjunto"
-          />
-        </figure>
-        <div class="interesting__caption">
-          <p class="interesting__paragraph">Selección de Fylo</p>
-          <img
-            src="img/bx-right-arrow-alt.svg"
-            alt="Icono de flecha hacia la derecha"
-          />
+            <div class="interesting__items">
+          <figure class="interesting__pictures">
+            <img
+              src="img/img__promo2.webp"
+              class="interesting__img"
+              alt="Modelo visualizando una campera con un conjunto"
+            />
+          </figure>
+          <div class="interesting__caption">
+            <p class="interesting__paragraph">Selección de Fylo</p>
+            <img
+              src="img/bx-right-arrow-alt.svg"
+              class="interesting__icon"
+              alt="Icono de flecha hacia la derecha"
+            />
+          </div>
+          </div>
+
+            <div class="interesting__items">
+          <figure class="interesting__pictures">
+            <img
+              src="img/img__promo3.webp"
+              class="interesting__img"
+              alt="Modelo visualizando un jean y un top celeste"
+            />
+          </figure>
+          <div class="interesting__caption">
+            <p class="interesting__paragraph">Todos nuestros accesorios</p>
+            <img
+              src="img/bx-right-arrow-alt.svg"
+              class="interesting__icon"
+              alt="Icono de flecha hacia la derecha"
+            />
+          </div>
+          </div>
+
+            <div class="interesting__items">
+            <figure class="interesting__pictures">
+            <img
+              src="img/img__promo4.webp"
+              class="interesting__img"
+              alt="Modelo visualizando una campera de color negro y un vestido"
+            />
+          </figure>
+          <div class="interesting__caption">
+            <p class="interesting__paragraph">Fylo por dentro</p>
+            <img
+              src="img/bx-right-arrow-alt.svg"
+              class="interesting__icon"
+              alt="Icono de flecha hacia la derecha"
+            />
+          </div>
         </div>
-      </div>
-
-      <div class="interesting__container">
-        <figure class="interesting__pictures">
-          <img
-            src="img/img__promo3.webp"
-            class="interesting__img"
-            alt="Modelo visualizando un jean y un top celeste"
-          />
-        </figure>
-        <div class="interesting__caption">
-          <p class="interesting__paragraph">Todos nuestros accesorios</p>
-          <img
-            src="img/bx-right-arrow-alt.svg"
-            alt="Icono de flecha hacia la derecha"
-          />
-        </div>
-      </div>
-
-      <div class="interesting__container">
-        <figure class="interesting__pictures">
-          <img
-            src="img/img__promo4.webp"
-            class="interesting__img"
-            alt="Modelo visualizando una campera de color negro y un vestido"
-          />
-        </figure>
-        <div class="interesting__caption">
-          <p class="interesting__paragraph">Fylo por dentro</p>
-          <img
-            src="img/bx-right-arrow-alt.svg"
-            alt="Icono de flecha hacia la derecha"
-          />
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <section class="footer__container container">
+        <img src="img/logo.svg" class="footer__logo" alt="Logo de Fylo" />
+
+        <div class="footer__items">
+          <p class="footer__contact">
+            <img
+              src="img/bx-current-location.svg"
+              class="footer__icon"
+              alt="Icono de ubicación"
+            />
+            Martinez 1728, CABA
+          </p>
+
+          <div class="footer__content">
+            <p class="footer__contact footer__contact--second">
+              <img
+                src="img/bxs-phone-call.svg"
+                class="footer__icon"
+                alt="Icono del telefono"
+              />
+              1154380632
+            </p>
+
+            <div class="footer__mail">
+              <p class="footer__contact">
+                <img
+                  src="img/bxs-envelope.svg"
+                  class="footer__icon"
+                  alt="Icono del email"
+                />
+                fylo@example.com
+              </p>
+            </div>
+          </div>
+
+            <nav class="footer__nav">
+              <!-- faltaría un titulo de sobre nosotros -->
+              <a href="#" class="footer__link">Grupo Fylo</a>
+              <a href="#" class="footer__link">Carreras</a>
+              <a href="#" class="footer__link">Protección de marca</a>
+              <a href="#" class="footer__link">FAQ</a>
+            </nav>
+
+            <nav class="footer__nav">
+              <!-- faltaría un titulo de sobre nosotros -->
+              <a href="#" class="footer__link">Contactanos</a>
+              <a href="#" class="footer__link">Términos</a>
+              <a href="#" class="footer__link">Privacidad</a>
+            </nav>
+
+            <div class="footer__social">
+              <a href="#" class="footer__media"
+                ><img src="img/bxl-twitter.svg" alt="Icono de Twitter"
+              /></a>
+              <a href="#" class="footer__media"
+                ><img src="img/bxl-facebook.svg" alt="Icono de Facebook"
+              /></a>
+              <a href="#" class="footer__media footer__media--last"
+                ><img src="img/bxl-instagram-alt.svg" alt="Icono de Instagram"
+              /></a>
+            </div>
+          </div>
+      </section>
+    </footer>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <!-- <script src="js/globales.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/producto.js"></script>
+<script src="js/main.js"></script> -->
+
   </body>
 </html>

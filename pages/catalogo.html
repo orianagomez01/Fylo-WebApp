@@ -1,10 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
     <title>Catalogo | Fylo Indumentaria</title>
   </head>
-  <body></body>
+  <body>
+    <header class="fylo">
+      <nav class="nav container">
+        <figure class="nav__logo">
+          <a href="/index.html">
+            <img src="/img/logo.svg" class="nav__img" alt="Logo" />
+          </a>
+        </figure>
+        <a href="#" class="nav__link" id="nav__icon--user">
+          <img
+            src="/img/bx-user.svg"
+            class="nav__icon"
+            alt="Icono del usuario"
+          />
+        </a>
+        <div class="btnCart" id="btnCart">
+          <a
+            href="#"
+            class="nav__link"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <span id="cantidad" class="badge bg-success">0</span>
+            <img
+              src="/img/bx-cart.svg"
+              class="nav__icon"
+              alt="Icono del carrito de compras"
+            />
+          </a>
+        </div>
+        <a href="#" class="nav__link">
+          <img
+            src="/img/bx-search.svg"
+            class="nav__icon"
+            alt="Icono de búsqueda"
+          />
+        </a>
+        <a href="#" class="nav__link">
+          <img src="/img/bx-menu.svg" class="nav__icon" alt="Icono del menú" />
+        </a>
+      </nav>
+      <div class="line"></div>
+    </header>
+
+    <main class="clothes">
+      <div class="clothes__container container">
+        <h1 class="clothes__title">INDUMENTARIA DE MUJER</h1>
+        <p class="clothes__paragraph">
+          Estás buscando algo clásico? Has entrado en nuestra sección de
+          indumentaria de mujeres. No importa si es algo sencillo para usar, un
+          diseño vintage, descubrí cuál va a ser tu próxima indumentaria
+          esencial.
+        </p>
+      </div>
+    </main>
+
+    <!-- BUSCADOR -->
+    <form id="search">
+      <div class="search__container container">
+        <input id="search-bar" type="search" placeholder="Buscar" />
+      </div>
+      <div id="search__results--container"></div>
+    </form>
+
+    <section class="container">
+      <div class="filter__content">
+        <h2 class="filter__title">Filtrar:</h2>
+      </div>
+      <div id="filter"></div>
+    </section>
+
+    <section id="card"></section>
+
+    <!-- CARRITO -->
+    <section id="carrito">
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header" id="modal__header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div id="productosCarrito" class="modal-body"></div>
+            <div class="modal-footer">
+              <p id="totalCarrito"></p>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="button" class="btn btn-success" id="confirmar">
+                Confirmar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <section class="footer__container container">
+        <img src="/img/logo.svg" class="footer__logo" alt="Logo de Fylo" />
+
+        <div class="footer__items">
+          <p class="footer__contact">
+            <img
+              src="/img/bx-current-location.svg"
+              class="footer__icon"
+              alt="Icono de ubicación"
+            />
+            Martinez 1728, CABA
+          </p>
+
+          <div class="footer__content">
+            <p class="footer__contact footer__contact--second">
+              <img
+                src="/img/bxs-phone-call.svg"
+                class="footer__icon"
+                alt="Icono del telefono"
+              />
+              1154380632
+            </p>
+
+            <div class="footer__mail">
+              <p class="footer__contact">
+                <img
+                  src="/img/bxs-envelope.svg"
+                  class="footer__icon"
+                  alt="Icono del email"
+                />
+                fylo@example.com
+              </p>
+            </div>
+          </div>
+
+          <nav class="footer__nav">
+            <!-- faltaría un titulo de sobre nosotros -->
+            <a href="#" class="footer__link">Grupo Fylo</a>
+            <a href="#" class="footer__link">Carreras</a>
+            <a href="#" class="footer__link">Protección de marca</a>
+            <a href="#" class="footer__link">FAQ</a>
+          </nav>
+
+          <nav class="footer__nav">
+            <!-- faltaría un titulo de sobre nosotros -->
+            <a href="#" class="footer__link">Contactanos</a>
+            <a href="#" class="footer__link">Términos</a>
+            <a href="#" class="footer__link">Privacidad</a>
+          </nav>
+
+          <div class="footer__social">
+            <a href="#" class="footer__media"
+              ><img src="/img/bxl-twitter.svg" alt="Icono de Twitter"
+            /></a>
+            <a href="#" class="footer__media"
+              ><img src="/img/bxl-facebook.svg" alt="Icono de Facebook"
+            /></a>
+            <a href="#" class="footer__media footer__media--last"
+              ><img src="/img/bxl-instagram-alt.svg" alt="Icono de Instagram"
+            /></a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script src="/js/globales.js"></script>
+    <script src="/js/funciones.js"></script>
+    <script src="/js/producto.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
