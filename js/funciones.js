@@ -7,16 +7,16 @@ function buscadorHTML(lista) {
         titulosProductos.classList.add('search__container');
         titulosProductos.classList.add('container');
 
-        titulosProductos.innerHTML = `<div class="">
+        titulosProductos.innerHTML = `
         <a href="#" class="searchbar__result">
         <img class="searchbar__img" src="${buscador.img}" alt="Imagen del producto seleccionado">
         <div class="searchbar__texts">
           <p class="searchbar__title">${buscador.nombre}</p>
           <p class="searchbar__paragraph">${buscador.descripcion}</p>
-          <p class="searchbar__paragraph">${buscador.sumarIva(parseInt(0.21))}</p>
+          <p class="searchbar__paragraph">$${buscador.sumarIva(parseInt(0.21))}</p>
           </div>
       </a>
-      </div>`
+      `
 
         resultados.append(titulosProductos);
     }
@@ -33,6 +33,10 @@ buscadorProductos.oninput = (e) => {
 
     //pasa del array a texto plano
     localStorage.setItem('Buscador', JSON.stringify(filtrados));
+
+    if (e.target.value == "") {
+        resultados.innerHTML = "";
+    }
 }
 
 //--------------------------------------------------------------------------------------------- 
@@ -80,7 +84,6 @@ function seleccionarProducto() {
         boton.addEventListener('click', function () {
 
             let seleccion = carrito.find(producto => producto.id == this.id);
-            console.log(seleccion);
 
             if (seleccion) {
                 seleccion.agregarCantidad();
@@ -90,7 +93,6 @@ function seleccionarProducto() {
             }
             localStorage.setItem('Carrito', JSON.stringify(carrito));
             carritoUI(carrito);
-            totalCarrito();
             Toastify({
                 text: `Se ha agregado el producto ${seleccion.nombre}`,
                 duration: 2000,
@@ -125,24 +127,39 @@ function carritoUI(lista) {
         <h3 class="modal__title"> ${producto.nombre}</h3> 
         <p class="modal__paragraph">$${producto.precio} X ${producto.cantidad} <span class="modal__paragraph--bold"> $${producto.subTotal()}</span> </p>
         </div>
-        <a href="#" class="modal__icon" id="modal__btn">
-        <img class="modal__icon" src="/img/bxs-trash.svg" alt="Icono de tacho de basura">
-        </a>        `
+        <a href="#" class="modal__icon" id="${producto.id}">
+        <img class="modal__icon--img" src="/img/bxs-trash.svg" alt="Icono de tacho de basura">
+        </a>`
 
         productosCarrito.append(modalProducto);
     }
+    document.querySelectorAll('.modal__icon').forEach(boton => boton.onclick = borrarProducto);
+    totalCarrito();
+
+}
+
+//FUNCIÓN QUE HACE QUE DESAPAREZCA DEL CARRITO
+function eliminarCarrito() {
+    let posicion = carrito.findIndex(producto => producto.id == this.id);
+    carrito.splice(posicion, 1);
+    carritoUI(carrito);
+    localStorage.setItem('Carrito', JSON.stringify(carrito));
 }
 
 //FUNCIÓN QUE BORRA EL PRODUCTO SELECCIONADO 
-// function borrarProducto() {
-//     botonBorrar.addEventListener('click', function () {
-//         // localStorage.clear();
-//         // carrito.splice(seleccion);
-//         // carritoUI(carrito);
-//         // // cantidadCarrito--;
-//         // console.log('CLICK BORRAR');
-//     })
-// }
+function borrarProducto() {
+    let producto = carrito.find(p => p.id == this.id);
+
+    if (producto.cantidad > 1) {
+        producto.eliminarCantidad(1);
+        carritoUI(carrito);
+        totalCarrito();
+        localStorage.setItem('Carrito', JSON.stringify(carrito));
+    } else {
+        eliminarCarrito();
+    }
+}
+
 
 //FUNCION QUE MUESTRA EL SELECTOR DE FILTRADO
 function filtroUI(productos) {
@@ -151,8 +168,6 @@ function filtroUI(productos) {
     const filtradoCategorias = productos.map(producto => producto.tag);
     const filtradoTalles = ['S', 'M', 'L', 'XL', 'XXL'];
 
-    // console.log(arraySinDuplicados(filtradoCategorias));
-    // console.log(arraySinDuplicados(filtradoTalles));
     crearSelector(arraySinDuplicados(filtradoCategorias), "tag", "Categorias");
     crearSelector(arraySinDuplicados(filtradoTalles), "talle", "Talles");
 }
@@ -201,27 +216,23 @@ function promesaCompra(saldo) {
 
 //FUNCIÓN DEL PRECIO TOTAL DEL CARRITO
 function totalCarrito() {
-    //Realizo la suma total del carrito
     let total = carrito.reduce((totalCompra, actual) => totalCompra += actual.subTotal(), 0);
     totalCarritoInterfaz.innerHTML = `Total: <span class="modal__paragraph--bold">$${total}</span>`;
     return total;
 }
 
-//--------------Funcion vaciar localstorage y array carrito----------------------
 function vaciarCarrito() {
-    //borro el localStorage
     localStorage.clear();
-    //borro el array carrito con splice
     carrito.splice(0, carrito.length);
-    //Llamo a la funcion para generar una interfaz vacia
     carritoUI(carrito);
+    productosCarrito.innerHTML = `<h6 class="text-center"><span class="modal__paragraph--bold">Tu carrito está vacío</span></h6>`
     totalCarritoInterfaz.innerHTML = `Total: <span class="modal__paragraph--bold">$0</span>`;
 }
 
 //FUNCION GENERADORA DE ALERTAS 
 
 function alertaEstado(mensaje, tipo) {
-    Swal.fire(
+    swal(
         'Estado de compra',
         mensaje,
         tipo

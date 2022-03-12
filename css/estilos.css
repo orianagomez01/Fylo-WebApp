@@ -522,7 +522,8 @@ span {
 
 .searchbar__img {
     border-radius: 6%;
-    width: 8%;
+    width: 40%;
+    object-fit: cover;
 }
 
 .search__container {
@@ -530,18 +531,48 @@ span {
     justify-content: flex-start;
 }
 
+.search__results {
+    box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.searchbar__result {
+    display: flex;
+    text-decoration: none;
+
+}
+
 #search__results--container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1em;
+    box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 
 .searchbar__texts {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 6%;
+    padding: 0 4%;
+}
+
+.searchbar__title {
+    font-size: 1.2rem;
+    color: var(--black-color);
+    font-weight: 700;
+    font-family: var(--body-font);
+}
+
+.searchbar__paragraph {
+    color: var(--grey-font);
+    font-weight: 400;
+    font-family: var(--body-font);
+}
+
+.searchbar__paragraph:nth-of-type(3) {
+    color: var(--black-color);
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 @media (min-width: 740px) {
@@ -561,10 +592,6 @@ span {
     .nav__link {
         margin-left: 1vh;
     }
-
-    /* .nav__link:nth-of-type(2) {
-        padding-left: auto;
-    } */
 
     #btnCart {
         margin-left: auto;
@@ -757,6 +784,11 @@ span {
         font-size: 2rem;
     }
 
+    .searchbar__img {
+        border-radius: 6%;
+        width: 15%;
+    }
+
     .filter__title {
         font-family: var(--body-font);
         font-size: 3rem;
@@ -877,7 +909,7 @@ span {
     }
 
     .clothes__paragraph {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-right: 45%;
     }
 

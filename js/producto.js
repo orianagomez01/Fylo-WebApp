@@ -1,5 +1,5 @@
 class Indumentaria {
-    constructor(id, nombre, descripcion, precio, tag, talle, img) {
+    constructor(id, nombre, descripcion, precio, tag, talle, img, cantidad) {
         this.id = parseInt(id);
         this.nombre = nombre.toUpperCase();
         this.descripcion = descripcion;
@@ -7,7 +7,7 @@ class Indumentaria {
         this.tag = tag;
         this.talle = talle;
         this.img = img;
-        this.cantidad = 1;
+        this.cantidad = cantidad || 1;
     }
     // acá van MÉTODOS DEL OBJETO !!!!!!!! no hace falta que le agregue la palabra reservada función - tiene que ir fuera del constructor pero dentro de la clase 
     sumarIva(impuesto) {
@@ -16,8 +16,8 @@ class Indumentaria {
     agregarCantidad() {
         this.cantidad++;
     }
-    eliminarCantidad() {
-        this.cantidad--;
+    eliminarCantidad(valor) {
+        this.cantidad -= valor;
     }
     subTotal() {
         return this.precio * this.cantidad;

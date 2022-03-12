@@ -1,0 +1,156 @@
+[{
+        "id": 1,
+        "nombre": "Portsaid",
+        "descripcion": "Top PORTSAID Verde con Flores Rosas",
+        "precio": 1490,
+        "tag": "Camisetas",
+        "talle": [
+            "XS",
+            "S",
+            "L"
+        ],
+        "img": "../img/catalogo__remeras.webp",
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Lacoste",
+        "descripcion": "Top LACOSTE Color Beige",
+        "precio": 800,
+        "tag": "Camisetas",
+        "talle": [
+            "XS",
+            "S",
+            "M",
+            "XXL"
+        ],
+        "img": "../img/catalogo__remeras2.webp",
+        "cantidad": 1
+    }, {
+        "id": 3,
+        "nombre": "Skanda",
+        "descripcion": "Camiseta SKANDA de San Diego, Surf Club",
+        "precio": 999,
+        "tag": "Camisetas",
+        "talle": [
+            "XS",
+            "M"
+        ],
+        "img": "../img/catalogo__remeras4.webp",
+        "cantidad": 1
+    }, {
+        "id": 4,
+        "nombre": "47 Street",
+        "descripcion": "Camiseta 47 STREET Luna y Sol",
+        "precio": 3199,
+        "tag": "Camisetas",
+        "talle": [
+            "S",
+            "XXL"
+        ],
+        "img": "../img/catalogo__remeras5.webp",
+        "cantidad": 1
+    }, {
+        "id": 5,
+        "nombre": "Laile",
+        "descripcion": "Camisa LAILE de Colores Ocre",
+        "precio": 8000,
+        "tag": "Camisetas",
+        "talle": [
+            "S",
+            "XL"
+        ],
+        "img": "../img/catalogo__remeras6.webp",
+        "cantidad": 1
+    }, {
+        "id": 6,
+        "nombre": "Prussia",
+        "descripcion": "Pantalón PRUSSIA con Lino",
+        "precio": 8252,
+        "tag": "Jeans",
+        "talle": [
+            "S",
+            "L",
+            "XXL"
+        ],
+        "img": "../img/catalogo__jeans.webp",
+        "cantidad": 1
+    }, {
+        "id": 7,
+        "nombre": "EcoSistema",
+        "descripcion": "Pantalón ECOSISTEMA con Cierre",
+        "precio": 4999,
+        "tag": "Jeans",
+        "talle": [
+            "XS",
+            "M",
+            "L",
+            "XL"
+        ],
+        "img": "../img/catalogo__jeans2.webp",
+        "cantidad": 1
+    }, {
+        "id": 8,
+        "nombre": "System",
+        "descripcion": "Pantalón Jean SYSTEM Tiro Alto",
+        "precio": 4794,
+        "tag": "Jeans",
+        "talle": [
+            "XS",
+            "S",
+            "XL"
+        ],
+        "img": "../img/catalogo__jeans3.webp",
+        "cantidad": 1
+    }, {
+        "id": 9,
+        "nombre": "Wanama",
+        "descripcion": "Pantalón Jean WANAMA Negro",
+        "precio": 8290,
+        "tag": "Jeans",
+        "talle": [
+            "XS",
+            "S",
+            "M"
+        ],
+        "img": "../img/catalogo__jeans4.webp",
+        "cantidad": 1
+    }, {
+        "id": 10,
+        "nombre": "Mistral",
+        "descripcion": "Pantalón Jean MISTRAL Tobillero",
+        "precio": 6500,
+        "tag": "Jeans",
+        "talle": [
+            "M",
+            "L"
+        ],
+        "img": "../img/catalogo__jeans5.webp",
+        "cantidad": 1
+    }, {
+        "id": 11,
+        "nombre": "Step Back",
+        "descripcion": "Pantalón Jean STEP BACK Tiro Alto",
+        "precio": 7200,
+        "tag": "Jeans",
+        "talle": [
+            "XS",
+            "XL"
+        ],
+        "img": "../img/catalogo__jeans6.webp",
+        "cantidad": 1
+    }, {
+
+        "id": 12,
+        "nombre": "Maryland",
+        "descripcion": "Buzo MARYLAND West Virginia",
+        "precio": 3400,
+        "tag": "Camisetas",
+        "talle": [
+            "S",
+            "L"
+        ],
+        "img": "../img/catalogo__remeras7.webp",
+        "cantidad": 1
+    }
+]
