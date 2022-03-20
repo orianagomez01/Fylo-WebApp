@@ -124,7 +124,7 @@ function carritoUI(lista) {
         <p class="modal__paragraph">$${producto.precio} X ${producto.cantidad} <span class="modal__paragraph--bold"> $${producto.subTotal()}</span> </p>
         </div>
         <a href="#" class="modal__icon" id="${producto.id}">
-        <img class="modal__icon--img" src="/img/bxs-trash.svg" alt="Icono de tacho de basura">
+        <img class="modal__icon--img" src="../img/bxs-trash.svg" alt="Icono de tacho de basura">
         </a>`
 
         productosCarrito.append(modalProducto);
