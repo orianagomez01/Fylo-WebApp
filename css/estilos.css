@@ -913,6 +913,15 @@ span {
         margin-right: 45%;
     }
 
+    .clothes__paragraph--bold {
+        color: var(--black-color);
+        font-weight: 500;
+    }
+
+    .clothes__paragraph--link {
+        color: var(--grey-font);
+    }
+
     .container {
         padding: 2% 0;
     }

@@ -31,19 +31,17 @@ confirmar.onclick = () => {
 
     promesaCompra(saldoCliente).then((mensaje) => {
 
-        // AGREGAR SPINNER HACIA LA SIGUIENTE PANTALLA 
         agregarSpinner();
-        //LLAMAR A LA API
         fetch('https://apis.datos.gob.ar/georef/api/provincias')
             .then((respuesta) => {
                 return respuesta.json()
             }).then((datos) => {
-                //VISUALIZAR LOS DATOS
-
                 mostrarProvincias();
                 const provFiltro = document.getElementById('provFiltro');
 
                 for (const provincia of datos.provincias) {
+                    datos.provincias.sort(ordenar);
+
                     provFiltro.innerHTML += `<option value="${provincia.id}">
                     ${provincia.nombre}
                     </option>`
@@ -61,6 +59,8 @@ confirmar.onclick = () => {
                             const munFiltro = document.getElementById('muniFiltro');
 
                             for (const municipio of datos.municipios) {
+                                datos.municipios.sort(ordenar);
+
                                 munFiltro.innerHTML += `<option value="${municipio.id}">
                                 ${municipio.nombre}
                                 </option>`

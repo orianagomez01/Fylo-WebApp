@@ -9,7 +9,6 @@ class Indumentaria {
         this.img = img;
         this.cantidad = cantidad || 1;
     }
-    // acá van MÉTODOS DEL OBJETO !!!!!!!! no hace falta que le agregue la palabra reservada función - tiene que ir fuera del constructor pero dentro de la clase 
     sumarIva(impuesto) {
         return this.precio += (this.precio * impuesto);
     }

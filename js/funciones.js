@@ -17,7 +17,6 @@ function buscadorHTML(lista) {
           </div>
       </a>
       `
-
         resultados.append(titulosProductos);
     }
 }
@@ -41,7 +40,6 @@ buscadorProductos.oninput = (e) => {
 
 //--------------------------------------------------------------------------------------------- 
 
-//PRODUCTOS !!!!!!
 //FUNCIÓN QUE MUESTRAN LOS PRODUCTOS EN PANTALLA
 function productosUI(productos) {
     productosRender.innerHTML = "";
@@ -72,11 +70,9 @@ function productosUI(productos) {
         productosRender.append(divProducto);
     }
     seleccionarProducto();
-
 }
 
 //FUNCIÓN CUANDO SE HACE CLICK EN EL BOTON "AGREGAR AL CARRITO"
-
 function seleccionarProducto() {
     let botones = document.getElementsByClassName('card__btn');
 
@@ -135,12 +131,11 @@ function carritoUI(lista) {
     }
     document.querySelectorAll('.modal__icon').forEach(boton => boton.onclick = borrarProducto);
     totalCarrito();
-
 }
 
 //FUNCIÓN QUE HACE QUE DESAPAREZCA DEL CARRITO
-function eliminarCarrito() {
-    let posicion = carrito.findIndex(producto => producto.id == this.id);
+function eliminarCarrito(productoAEliminar) {
+    let posicion = carrito.findIndex(producto => producto.id == productoAEliminar.id);
     carrito.splice(posicion, 1);
     carritoUI(carrito);
     localStorage.setItem('Carrito', JSON.stringify(carrito));
@@ -156,10 +151,9 @@ function borrarProducto() {
         totalCarrito();
         localStorage.setItem('Carrito', JSON.stringify(carrito));
     } else {
-        eliminarCarrito();
+        eliminarCarrito(producto);
     }
 }
-
 
 //FUNCION QUE MUESTRA EL SELECTOR DE FILTRADO
 function filtroUI(productos) {
@@ -252,7 +246,6 @@ function cambiarTitulo(titulo) {
     </h5>`
 }
 
-
 function mostrarProvincias() {
 
     cambiarTitulo("¿Cómo quieres recibir la compra?");
@@ -279,6 +272,12 @@ function mostrarProvincias() {
     </div> `
 }
 
-function comparar(a, b) {
-    return a - b;
+function ordenar(a, b) {
+    if (a.nombre < b.nombre) {
+        return -1;
+    }
+    if (a.nombre > b.nombre) {
+        return 1;
+    }
+    return 0;
 }
